@@ -1,0 +1,121 @@
+services:
+  db-atletas:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: mcp
+      POSTGRES_PASSWORD: mcp
+      POSTGRES_DB: mcp_atletas
+    volumes:
+      - ./init-atletas.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - rede-mtb
+
+  db-resultados:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: mcp
+      POSTGRES_PASSWORD: mcp
+      POSTGRES_DB: mcp_resultados
+    volumes:
+      - ./init-resultados.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
+    networks:
+      - rede-mtb
+
+  db-expert:
+    image: pgvector/pgvector:pg15
+    environment:
+      POSTGRES_USER: mcp
+      POSTGRES_PASSWORD: mcp
+      POSTGRES_DB: mcp_expert
+    volumes:
+      - ./init-expert.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5434:5432"
+    networks:
+      - rede-mtb
+
+  service-atletas:
+    build:
+      context: ./service-atletas
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3000"
+    environment:
+      - DATABASE_URL=postgresql://mcp:mcp@db-atletas:5432/mcp_atletas
+    depends_on:
+      - db-atletas
+    networks:
+      - rede-mtb
+
+  service-resultados:
+    build:
+      context: ./service-resultados
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3000"
+    environment:
+      - DATABASE_URL=postgresql://mcp:mcp@db-resultados:5432/mcp_resultados
+    depends_on:
+      - db-resultados
+    networks:
+      - rede-mtb
+
+  service-rankings:
+    build:
+      context: ./service-rankings
+      dockerfile: Dockerfile
+    ports:
+      - "3003:3000"
+    environment:
+      - DATABASE_URL=postgresql://mcp:mcp@db-resultados:5432/mcp_resultados
+    depends_on:
+      - db-resultados
+    networks:
+      - rede-mtb
+
+  mcp-server:
+    build:
+      context: ./mcp-server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - SERVICE_ATLETAS_URL=http://service-atletas:3000
+      - SERVICE_RESULTADOS_URL=http://service-resultados:3000
+      - SERVICE_RANKINGS_URL=http://service-rankings:3000
+    depends_on:
+      - service-atletas
+      - service-resultados
+      - service-rankings
+    networks:
+      - rede-mtb
+
+  expert-system:
+    build:
+      context: ./expert-system
+      dockerfile: Dockerfile
+    ports:
+      - "3005:3005"
+    environment:
+      - DATABASE_URL=postgresql://mcp:mcp@db-expert:5432/mcp_expert
+      - MCP_SERVER_URL=http://mcp-server:8000/mcp
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-flash-latest}
+      - JUDGE_MODEL=${JUDGE_MODEL:-gemini-flash-latest}
+      - CACHE_THRESHOLD=${CACHE_THRESHOLD:-0.65}
+    volumes:
+      - ./expert-system/.cache:/app/node_modules/@huggingface/transformers/.cache
+      - ./expert-system/judge/reports:/app/judge/reports
+    depends_on:
+      - db-expert
+      - mcp-server
+    networks:
+      - rede-mtb
+
+networks:
+  rede-mtb:
+    driver: bridge
