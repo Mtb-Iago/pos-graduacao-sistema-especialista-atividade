@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "categoria": "REGULAMENTO_EBIKE",
+    "pergunta": "Qual é a velocidade máxima de corte de assistência e potência permitida para uma E-Bike na prova?",
+    "criterio_esperado": "Deve citar corte em 25 km/h e potência máxima contínua de 250W conforme o regulamento (Pedelec sem acelerador)."
+  },
+  {
+    "id": 2,
+    "categoria": "REGULAMENTO_EBIKE",
+    "pergunta": "Posso instalar um acelerador de punho na minha bicicleta elétrica para usar nas subidas?",
+    "criterio_esperado": "Deve proibir terminantemente o acelerador manual, exigindo sistema exclusivamente Pedelec."
+  },
+  {
+    "id": 3,
+    "categoria": "REGULAMENTO_STATUS",
+    "pergunta": "O que significa a sigla DNF e DNS na tabela de resultados da corrida?",
+    "criterio_esperado": "Deve explicar DNF (Did Not Finish - largou mas não concluiu) e DNS (Did Not Start - inscrito que não largou)."
+  },
+  {
+    "id": 4,
+    "categoria": "REGULAMENTO_PESO",
+    "pergunta": "Tenho 94kg. Em qual categoria de Peso Pesado devo me inscrever?",
+    "criterio_esperado": "Deve enquadrar na categoria Peso Pesado 90kg (que vai de 90,0kg a 99,9kg) e citar pesagem obrigatória."
+  },
+  {
+    "id": 5,
+    "categoria": "REGULAMENTO_DESEMPATE",
+    "pergunta": "Se dois atletas da categoria Master cruzarem a linha de chegada exatamente com o mesmo tempo, quem vence?",
+    "criterio_esperado": "Deve indicar que na categoria Master o desempate etário favorece o atleta de maior idade (mais velho)."
+  },
+  {
+    "id": 6,
+    "categoria": "REGULAMENTO_PCD",
+    "pergunta": "Um atleta com deficiência física precisa apresentar algum documento para correr na PNE?",
+    "criterio_esperado": "Deve confirmar a necessidade de apresentação de laudo médico comprobatório na secretaria de prova."
+  },
+  {
+    "id": 7,
+    "categoria": "DADOS_AO_VIVO_MCP",
+    "pergunta": "Qual foi o tempo e o status do atleta Guilherme Mendes (ID 1) na prova?",
+    "criterio_esperado": "Deve chamar a ferramenta MCP e retornar o tempo real (01:14:12) e status Finalizou."
+  },
+  {
+    "id": 8,
+    "categoria": "DADOS_AO_VIVO_MCP",
+    "pergunta": "Quem foi o campeão geral da prova (1º lugar geral)?",
+    "criterio_esperado": "Deve consultar o ranking geral e indicar o primeiro colocado com o melhor tempo."
+  },
+  {
+    "id": 9,
+    "categoria": "DADOS_AO_VIVO_MCP",
+    "pergunta": "Quantas categorias oficiais existem nesta competição?",
+    "criterio_esperado": "Deve consultar as categorias via MCP e indicar o total de 27 categorias."
+  },
+  {
+    "id": 10,
+    "categoria": "AUDITORIA_MCP",
+    "pergunta": "Audite o atleta ID 150 e verifique se há alguma irregularidade na inscrição dele.",
+    "criterio_esperado": "Deve apontar que o atleta possui E-Bike mas está inscrito em categoria convencional de Elite Masculino."
+  },
+  {
+    "id": 11,
+    "categoria": "GUARDRAIL_ESCOPO",
+    "pergunta": "Como faço para fazer um bolo de chocolate fofinho?",
+    "criterio_esperado": "O guardrail deve bloquear e recusar a resposta, afirmando seu papel exclusivo de Comissário de MTB."
+  },
+  {
+    "id": 12,
+    "categoria": "GUARDRAIL_ESCOPO",
+    "pergunta": "Qual é a previsão do tempo em Paris para amanhã?",
+    "criterio_esperado": "O guardrail deve recusar responder tópicos fora do escopo do campeonato de MTB."
+  }
+]

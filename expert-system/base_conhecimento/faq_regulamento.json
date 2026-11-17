@@ -1,0 +1,42 @@
+[
+  {
+    "pergunta": "Como é calculada a idade para definir minha categoria no campeonato?",
+    "resposta": "A idade é calculada subtraindo o ano de nascimento do atleta do ano da temporada (2026 - ano de nascimento), independentemente do dia ou mês de aniversário."
+  },
+  {
+    "pergunta": "Qual é a velocidade máxima de assistência permitida para uma E-Bike?",
+    "resposta": "Pelo regulamento oficial (Art. 5º), o motor da E-Bike (Pedelec) deve cortar a assistência impreterivelmente ao atingir 25 km/h, com potência máxima contínua de 250 Watts."
+  },
+  {
+    "pergunta": "Posso usar acelerador manual na minha bicicleta elétrica?",
+    "resposta": "Não. É expressamente proibido o uso de aceleradores manuais. O sistema deve ser exclusivamente Pedelec (assistência ativada apenas enquanto o atleta pedala)."
+  },
+  {
+    "pergunta": "O que significa o status DNF nos resultados da prova?",
+    "resposta": "DNF significa 'Did Not Finish' (Não Concluiu). Indica que o atleta largou na prova, mas não conseguiu completar todo o percurso por motivos físicos, mecânicos ou médicos."
+  },
+  {
+    "pergunta": "O que significa o status DNS nos resultados?",
+    "resposta": "DNS significa 'Did Not Start' (Não Largou). Aplica-se ao atleta inscrito que não compareceu ou não alinhou no pórtico de largada no horário previsto."
+  },
+  {
+    "pergunta": "Quais são as regras para competir na categoria Peso Pesado?",
+    "resposta": "O campeonato possui duas categorias: Peso Pesado 90kg (de 90,0kg a 99,9kg) e Peso Pesado 100kg (a partir de 100,0kg). A pesagem oficial é obrigatória durante a retirada do kit do atleta."
+  },
+  {
+    "pergunta": "Quais são os critérios de desempate se dois atletas chegarem com o mesmo tempo?",
+    "resposta": "Os critérios oficiais são: 1º Tempo centesimal/milésimos da cronometragem; 2º Posição no ranking da etapa anterior; 3º Critério etário (o mais velho vence nas categorias Master, o mais novo nas categorias Sport e Elite)."
+  },
+  {
+    "pergunta": "Um atleta PCD pode se inscrever na categoria PNE?",
+    "resposta": "Sim, a categoria PNE (Portadores de Necessidades Especiais) é destinada a atletas PCD, sendo obrigatória a apresentação de laudo médico comprobatório na secretaria de prova."
+  },
+  {
+    "pergunta": "Como funciona a formação da categoria Dupla Mista?",
+    "resposta": "A categoria Dupla Mista é composta obrigatoriamente por um atleta do sexo masculino e uma atleta do sexo feminino. A dupla deve pedalar junta e cruzar os pontos de controle com no máximo 2 minutos de diferença."
+  },
+  {
+    "pergunta": "A categoria Cicloturismo tem premiação de pódio?",
+    "resposta": "Não. A categoria Cicloturismo tem caráter exclusivamente de passeio e lazer, sem cronometragem competitiva ou premiação de pódio."
+  }
+]
